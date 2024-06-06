@@ -5,9 +5,10 @@ USER=$(whoami)
 MAIL=$(whoami)@student.42barcelona.com
 
 # Verificar si el archivo .zshrc existe
-if [ ! -f ~/.zshrc ]; then
-  # Si no existe, crear el archivo
-  touch ~/.zshrc
+if [ -f ~/.zshrc ]; then
+  # Si existe, crear una copia de seguridad
+  cp ~/.zshrc ~/.copia_zshrc
+  echo "Copia de seguridad de .zshrc creada en ~/.copia_zshrc"
 fi
 
 # Agregar variables al final del archivo .zshrc
